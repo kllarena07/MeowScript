@@ -1,9 +1,9 @@
-meow test 1
+meow test1 1
 MEOW test2 1
 
 murmur bruh {
-  hiss(test + test2)
+  hiss(test1 + test2)
 }
 
-meow test 1
-MEOW test2 1
+meow test3 1
+MEOW test4 1
