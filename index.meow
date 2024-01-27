@@ -1,3 +1,9 @@
-meow = 1
-meow = "string"
-MEOW! = 1
+meow test 1
+MEOW test2 1
+
+murmur bruh {
+  hiss(test + test2)
+}
+
+meow test 1
+MEOW test2 1
