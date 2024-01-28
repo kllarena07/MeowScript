@@ -7,17 +7,18 @@ test1 ^.*.^ 1
 test1 ^./.^ 1
 test1 ^%^ 1
 
-murmur bruh {
+murmur my_func {
   hiss(test1 ^+^ test2)
+
+  murmur my_nested_func {
+    hiss("i'm nested")
+  }
+  pet->my_nested_func
 }
+pet->my_func
 
 meow i 0
 ^o_o^ i :3 5 {
   hiss(i)
   i ^.+.^ 1
 }
-
-meow test3 1
-MEOW test4 1
-
-hiss(test3 ^+^ test4)
