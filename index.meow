@@ -1,24 +1,5 @@
-meow test1 1
-MEOW test2 "hello"
-
-test1 ^.+.^ 1
-test1 ^.-.^ 1
-test1 ^.*.^ 1
-test1 ^./.^ 1
-test1 ^%^ 1
-
-murmur my_func {
-  hiss(test1 ^+^ test2)
-
-  murmur my_nested_func {
-    hiss("i'm nested")
+^o3o^ i in 10..0 {
+  ^o?o^ i ^%^ 2 ^>=<^ 0 {
+    hiss(i, "even")
   }
-  pet->my_nested_func
-}
-pet->my_func
-
-meow i 0
-^o_o^ i :3 5 {
-  hiss(i)
-  i ^.+.^ 1
-}
+} 

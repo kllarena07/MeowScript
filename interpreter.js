@@ -18,27 +18,42 @@ fs.readFile(fileName, 'utf-8', (err, data) => {
   }
 
   const converted_lines = data.replaceAll('{', "\n<BLOCK_BEGIN>")
-                              .replaceAll('}', "<BLOCK_END>")
-                              .replaceAll(':3', '<')
+                              .replaceAll('}', "<BLOCK_END>\n")
                               .replaceAll('!:3', '>')
-                              .replaceAll(':>', '>=')
+                              .replaceAll(':3', '<')
                               .replaceAll('!:>', '<=')
+                              .replaceAll(':>', '>=')
+                              .replaceAll('^>=<^', '==')
+                              .replaceAll('^>&<^', '&&')
+                              .replaceAll('^>|<^', '||')
                               .replaceAll('^%^', '%')
                               .replaceAll('^+^', '+')
                               .replaceAll('^-^', '-')
                               .replaceAll('^*^', '*')
                               .replaceAll('^/^', '/')
                               .split('\n')
-
+      
   for (let line of converted_lines) {
-    if(line.includes('NAP')) {
+    if (line.includes('NAP')) {
       writeBuffer.push(line.replace('NAP', '//'))
     }
-    if (line.includes('meow')) {
+    if (line.includes('^-?-^')) {
+      writeBuffer.push("else")
+    }
+    if (line.includes('^o?o^')) {
+      const broken = line.split('^o?o^')
+      writeBuffer.push(`if (${broken[1]})`)
+    }
+    if (line.includes('^o3o^')) {
+      const broken = line.split(' ')
+      const range = broken[3].split('..')
+      writeBuffer.push(`for (let ${broken[1]} = ${range[0]}; ${broken[1]} ${range[0] < range[1] ? '<' : '>'} ${range[1]}; ${range[0] < range[1] ? '++' : '--'}${broken[1]})`)
+    }
+    if (line.startsWith('meow')) {
       const broken = line.split(' ')
       writeBuffer.push(`let ${broken[1]} = ${broken[2]}`)
     }
-    if (line.includes('MEOW')) {
+    if (line.startsWith('MEOW')) {
       const broken = line.split(' ')
       writeBuffer.push(`const ${broken[1]} = ${broken[2]}`)
     }
@@ -51,10 +66,10 @@ fs.readFile(fileName, 'utf-8', (err, data) => {
       writeBuffer.push(`function ${broken[1].trim()}()`)
     }
     if (line.includes('<BLOCK_BEGIN>')) {
-      writeBuffer.push(`{`)
+      writeBuffer.push('{')
     }
     if (line.includes('<BLOCK_END>')) {
-      writeBuffer.push(`}`)
+      writeBuffer.push('}')
     }
     if (line.includes('pet->')) {
       const broken = line.split('->')

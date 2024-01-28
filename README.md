@@ -15,8 +15,11 @@
 - ✅ murmur = function
 - ✅ hiss = console.log()
 - ✅ ^o_o^ = while loop
-- ^.3.^ = for loop
-- ^.?.^ = if
+- ✅ ^o3o^ = for loop
+- ✅ ^o?o^ = if
+- ✅ ^>=<^ = ==
+- ✅ ^>&<^ = &&
+- ✅ ^>|<^ = ||
 - trill = get user input
 - ✅ :3 = <
 - ✅ !:3 = >
@@ -121,3 +124,33 @@ if (true) {
   console.log(test + test2)
 }
 ```
+
+## Dictionary
+
+- meow is let
+- MEOW is const
+- hiss is console.log()
+- murmur is a function
+- use pet->function_name to call a function
+- !:3 is '>'
+- :3 is '<'
+- !:> is '<='
+- :> is '>='
+- ^>=<^ is '=='
+- ^>&<^ is '&&'
+- ^>|<^ is '||'
+- ^%^ is '%'
+- ^+^ is '+'
+- ^-^ is '-'
+- ^\*^ is '\*'
+- ^/^ is '/'
+- NAP is a single line comment
+- ^o?o^ is if
+- ^-?-^ is else
+- ^-?-^ ^o?o^ is else if
+- ^o3o^ is for
+- ^o_o^ is while
+- ^.+.^ is +=
+- ^.-.^ is -=
+- '^._.^' is _=
+- ^./.^' is /=

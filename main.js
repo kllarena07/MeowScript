@@ -1,19 +1,7 @@
-let test1 = 1
-const test2 = "hello"
-test1 += 1
-function my_func()
+for (let i = 10; i > 0; --i)
 {
-  console.log(test1 + test2)
-function my_nested_func()
+if ( i % 2 == 0 )
 {
-    console.log("i'm nested")
+    console.log(i, "even")
 }
-my_nested_func()
-}
-my_func()
-let i = 0
-while (i < 5)
-{
-  console.log(i)
-  i += 1
 }
