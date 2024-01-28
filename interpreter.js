@@ -23,6 +23,7 @@ fs.readFile(fileName, 'utf-8', (err, data) => {
                               .replaceAll(':3', '<')
                               .replaceAll('!:>', '<=')
                               .replaceAll(':>', '>=')
+                              .replaceAll('^>!<^', '!=')
                               .replaceAll('^>=<^', '==')
                               .replaceAll('^>&<^', '&&')
                               .replaceAll('^>|<^', '||')
