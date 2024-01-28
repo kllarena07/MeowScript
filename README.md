@@ -8,11 +8,11 @@ Features:
 - Control Structures (if and while loops)
 - Functions
 
-meow - data type ✅
-MEOW - constant data type ✅
-murmur - function ✅
-mrow - declare while loop
-mew - if ✅
+- ✅ meow = data type
+- ✅ MEOW = constant data type
+- ✅ murmur = function
+- mrow - while loop
+- mew - if
 
 hiss - console.log()
 purr - get user input

@@ -1,9 +1,9 @@
 meow test1 1
-MEOW test2 1
+MEOW test2 "hello"
 
 murmur bruh {
   hiss(test1 + test2)
-}
+} : bruh
 
 meow test3 1
 MEOW test4 1

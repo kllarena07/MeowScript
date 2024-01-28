@@ -27,13 +27,17 @@ fs.readFile(fileName, 'utf-8', (err, data) => {
     } else if (line.includes('MEOW')) {
       const broken = line.split(' ')
       writeBuffer.push(`const ${broken[1]} = ${broken[2]}`)
+    } else if (line.includes('hiss')) {
+      const modified = line.replace('hiss', 'console.log')
+      writeBuffer.push(modified)
     } else if (line.includes('murmur')) {
       const broken = line.split(' ')
       writeBuffer.push(`function ${broken[1]}()`)
     } else if (line.includes('<FUNC_BEGIN>')) {
       writeBuffer.push('{')
     } else if (line.includes('<FUNC_END>')) {
-      writeBuffer.push('}')
+      const broken = line.split(':')
+      writeBuffer.push(`}\n${broken[1].trim()}()`)
     }
   }
   toJSFile(writeBuffer)
