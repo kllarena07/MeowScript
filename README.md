@@ -14,14 +14,14 @@
 - ✅ MEOW = constant data type
 - ✅ murmur = function
 - ✅ hiss = console.log()
-- ^o_o^ = while loop
+- ✅ ^o_o^ = while loop
 - ^.3.^ = for loop
 - ^.?.^ = if
-- trill = get user inpu
-- :3 = <
-- !:3 = >
-- :> = <=
-- !:> = >=
+- trill = get user input
+- ✅ :3 = <
+- ✅ !:3 = >
+- ✅ :> = <=
+- ✅ !:> = >=
 
 # Example Code:
 
