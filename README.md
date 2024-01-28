@@ -13,11 +13,10 @@
 - ✅ meow = data type
 - ✅ MEOW = constant data type
 - ✅ murmur = function
-- mrow - while loop
-- mew - if
-
-hiss - console.log()
-purr - get user input
+- ✅ hiss = console.log()
+- purr = while loop
+- mew = if
+- trill = get user input
 
 # Example Code:
 
