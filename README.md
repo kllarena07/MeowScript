@@ -37,36 +37,36 @@ JavaScript
 ## Functions
 
 MeowScript
-`murmur bruh {
-  hiss(test + test2)
+`murmur bruh {\n
+  hiss(test + test2)\n
 }`
 
 JavaScript
-`function bruh() {
-  console.log(test + test2);
+`function bruh() {\n
+  console.log(test + test2)\n
 }
 bruh()`
 
 ## While Loops
 
 MeowScript
-`mrow true {
-  hiss(test + test2)
+`mrow true {\n
+  hiss(test + test2)\n
 }`
 
 JavaScript
-`while (true) {
-  console.log(test + test2);
+`while (true) {\n
+  console.log(test + test2)\n
 }`
 
 ## If Loops
 
 MeowScript
-`mew true {
-  hiss(test + test2)
+`mew true {\n
+  hiss(test + test2)\n
 }`
 
 JavaScript
-`if (true) {
-  console.log(test + test2);
+`if (true) {\n
+  console.log(test + test2)\n
 }`
