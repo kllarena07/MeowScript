@@ -7,42 +7,59 @@ const toJSFile = (buffer) => {
   const fileContent = buffer.join('\n');
 
   fs.writeFileSync("main.js", fileContent);
-
-  console.log("File successfully interpreted");
 }
 
 const writeBuffer = []
+
 fs.readFile(fileName, 'utf-8', (err, data) => {
   if (err) {
     console.error(err)
     return
   }
 
-  const converted_lines = data.split('\n')
-  
+  const converted_lines = data.replaceAll('{', "\n<BLOCK_BEGIN>")
+                              .replaceAll('}', "<BLOCK_END>")
+                              .replaceAll(':3', '<')
+                              .replaceAll('!:3', '>')
+                              .replaceAll(':>', '>=')
+                              .replaceAll('!:>', '<=')
+                              .replaceAll('^.+.^', '+=')
+                              .replaceAll('^.-.^', '-=')
+                              .replaceAll('^.*.^', '*=')
+                              .replaceAll('^./.^', '/=')
+                              .replaceAll('^%^', '%')
+                              .replaceAll('^+^', '+')
+                              .replaceAll('^-^', '-')
+                              .replaceAll('^*^', '*')
+                              .replaceAll('^/^', '/')
+                              .split('\n')
+
   for (let line of converted_lines) {
     if (line.includes('meow')) {
-      var temp = line.split(' ')
-      line = line.replace('meow', 'let')
-    } 
-    if (line.includes('MEOW')) {
-      line = line.replace('MEOW', 'const')
-    }
-    if (line.includes('hiss')) {
-       line = line.replace('hiss', 'console.log')
-    } 
-    if (line.includes('murmur')) {
-       line = line.replace('murmur', 'function')
-    } 
-    if (line.includes('^._.^')){
-      line = line.replaceAll('^._.^', 'for')
-    }
-    if (line.includes('^+^') || line.includes('^-^') || line.includes('^*^') || line.includes('^/^') || line.includes('^%^') || line.includes('^=^')
-    ){
-      line = line.replaceAll('^', '')
-    }
-    if (line.includes)
+      const broken = line.split(' ')
+      writeBuffer.push(`let ${broken[1]} = ${broken[2]}`)
+    } else if (line.includes('MEOW')) {
+      const broken = line.split(' ')
+      writeBuffer.push(`const ${broken[1]} = ${broken[2]}`)
+    } else if (line.includes('hiss')) {
+      const modified = line.replace('hiss', 'console.log')
+      writeBuffer.push(modified)
+    } else if (line.includes('murmur')) {
+      const broken = line.split(' ')
+      writeBuffer.push(`function ${broken[1]}()`)
+    } else if (line.includes('<BLOCK_BEGIN>')) {
+      writeBuffer.push(`{`)
+    } else if (line.includes('<BLOCK_END>')) {
+      writeBuffer.push(`}\n`)
+    } else if (line.includes('pet->')) {
+      const broken = line.split('->')
+      writeBuffer.push(`${broken[1]}()`)
+    } else if (line.includes('^o_o^')) {
+      const broken = line.split(' ')
+      writeBuffer.push(`while (${broken[1]} ${broken[2]} ${broken[3]})`)
+    } else {
       writeBuffer.push(line)
+    }
   }
   toJSFile(writeBuffer)
 })
