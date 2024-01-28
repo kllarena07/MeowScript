@@ -14,7 +14,8 @@
 - ✅ MEOW = constant data type
 - ✅ murmur = function
 - ✅ hiss = console.log()
-- purr = while loop
+- purr<(condition)> = while loop
+- purr[(condition)] = for loop
 - mew = if
 - trill = get user input
 
@@ -23,50 +24,80 @@
 ## Variables
 
 MeowScript
-`meow test 1`
+
+```
+meow test 1
+```
 
 JavaScript
-`let test = 1;`
+
+```
+let test = 1
+```
 
 MeowScript
-`MEOW test2 1`
+
+```
+MEOW test2 1
+```
 
 JavaScript
-`const test2 = 1;`
+
+```
+const test2 = 1
+```
 
 ## Functions
 
 MeowScript
-`murmur bruh {\n
-  hiss(test + test2)\n
-}`
+
+```
+murmur bruh {
+  hiss(test + test2)
+}
+```
 
 JavaScript
-`function bruh() {\n
-  console.log(test + test2)\n
+
+```
+function bruh() {
+  console.log(test + test2)
 }
-bruh()`
+bruh()
+```
 
 ## While Loops
 
 MeowScript
-`mrow true {\n
-  hiss(test + test2)\n
-}`
+
+```
+purr true {
+  hiss(test + test2)
+}
+```
 
 JavaScript
-`while (true) {\n
-  console.log(test + test2)\n
-}`
+
+```
+while (true) {
+  console.log(test + test2)
+}
+```
 
 ## If Loops
 
 MeowScript
-`mew true {\n
-  hiss(test + test2)\n
-}`
+
+```
+mew true {
+  hiss(test + test2)
+}
+```
 
 JavaScript
-`if (true) {\n
-  console.log(test + test2)\n
-}`
+
+```
+if (true) {
+  console.log(test + test2)
+}
+```
