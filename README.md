@@ -14,10 +14,10 @@
 - ✅ MEOW = constant data type
 - ✅ murmur = function
 - ✅ hiss = console.log()
-- purr<(condition)> = while loop
-- purr[(condition)] = for loop
+- purr:3 = while loop
+- purr:> = for loop
 - mew = if
-- trill = get user input
+- trill = get user inpu
 
 # Example Code:
 
@@ -66,13 +66,29 @@ function bruh() {
 bruh()
 ```
 
-## While Loops
+## Loops
 
 MeowScript
 
 ```
-purr true {
+purr:3 true {
   hiss(test + test2)
+}
+```
+
+JavaScript
+
+```
+while (true) {
+  console.log(test + test2)
+}
+```
+
+MeowScript
+
+```
+purr:> t of test  {
+  hiss(t)
 }
 ```
 

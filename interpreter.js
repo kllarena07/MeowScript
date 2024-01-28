@@ -38,6 +38,8 @@ fs.readFile(fileName, 'utf-8', (err, data) => {
     } else if (line.includes('<FUNC_END>')) {
       const broken = line.split(':')
       writeBuffer.push(`}\n${broken[1].trim()}()`)
+    } else {
+      writeBuffer.push(line)
     }
   }
   toJSFile(writeBuffer)
