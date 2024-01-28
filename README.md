@@ -1,4 +1,4 @@
-Features:
+# Programming Language Features
 
 - Variables and Data Types
 - Operators
@@ -7,6 +7,8 @@ Features:
   less than
 - Control Structures (if and while loops)
 - Functions
+
+# MVP Features
 
 - ✅ meow = data type
 - ✅ MEOW = constant data type
